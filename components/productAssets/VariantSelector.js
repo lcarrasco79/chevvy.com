@@ -3,13 +3,13 @@ import React from 'react';
 const VariantSelector = ({ variantGroups, onSelectOption, selectedOptions, ...passthrough }) => (
   <div {...passthrough}>
     {variantGroups.map(group => (
-      <div key={group.id}>
+      <div key={group.id} className="align-items-center">
       Add Protection Offered By <span className="mr-3 font-weight-semibold">Future State Insurance</span>?
       {group.options.map(option => (
-        <span
+        <button
           key={option.id}
           onClick={() => onSelectOption(group.id, option.id)}
-          className={`mr-3 cursor-pointer ${
+          className={`mr-3 ${
             selectedOptions[group.id] && selectedOptions[group.id] === option.id
               ? 'variant-btn-selected'
               : 'variant-btn'
@@ -20,7 +20,7 @@ const VariantSelector = ({ variantGroups, onSelectOption, selectedOptions, ...pa
                 {option.name === 'No'
                   ? '\u00A0'
                   : option.price.formatted_with_symbol}
-        </span>
+        </button>
       ))}
       </div>
     ))}
