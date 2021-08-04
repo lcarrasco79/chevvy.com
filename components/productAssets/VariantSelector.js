@@ -1,38 +1,31 @@
-import React from "react";
-import { Row, Radio } from "antd";
-import "antd/dist/antd.css";
+import React from 'react';
 
 const VariantSelector = ({ variantGroups, onSelectOption, selectedOptions, ...passthrough }) => (
   <div {...passthrough}>
-    <span className="mr-3 font-weight-semibold">
-      Add Protection Offered By Future State Insurance?
-    </span>
-    {variantGroups.map(({ options, ...group }) => (
-      <Row gutter={[16, 16]} key={group.id}>
-        <Radio.Group
-          name={group.id}
-          defaultValue={selectedOptions[group.id]}
-          onChange={onSelectOption}
+    {variantGroups.map(group => (
+      <div key={group.id}>
+      Add Protection Offered By <span className="mr-3 font-weight-semibold">Future State Insurance</span>?
+      {group.options.map(option => (
+        <span
+          key={option.id}
+          onClick={() => onSelectOption(group.id, option.id)}
+          className={`mr-3 cursor-pointer ${
+            selectedOptions[group.id] && selectedOptions[group.id] === option.id
+              ? 'variant-btn-selected'
+              : 'variant-btn'
+          }`}
         >
-          {options.map((option) => (
-            <Radio.Button
-              value={option.id}
-              style={{
-                margin: "10px",
-                textAlign: "center",
-                width: "75px",
-                height: "60px",
-              }}
-            >
-              {option.name}
-              <br />
-              {option.name === "No" ? "\u00A0" : option.price.formatted_with_symbol}
-            </Radio.Button>
-          ))}
-        </Radio.Group>
-      </Row>
+          {option.name}
+                <br />
+                {option.name === 'No'
+                  ? '\u00A0'
+                  : option.price.formatted_with_symbol}
+        </span>
+      ))}
+      </div>
     ))}
   </div>
 );
+
 
 export default VariantSelector;

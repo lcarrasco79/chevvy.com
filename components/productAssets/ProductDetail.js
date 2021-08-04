@@ -60,11 +60,11 @@ class ProductDetail extends Component {
   /**
    * On selecting variant
    */
-  handleSelectOption(e) {
+   handleSelectOption(variantGroupId, optionId) {
     this.setState({
       selectedOptions: {
         ...this.state.selectedOptions,
-        [e.target.name]: e.target.value,
+        [variantGroupId]: optionId,
       },
     });
   }
