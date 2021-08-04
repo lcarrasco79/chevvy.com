@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Radio } from "antd";
-//import "antd/dist/antd.css";
+import "antd/dist/antd.css";
 
 const VariantSelector = ({ variantGroups, onSelectOption, selectedOptions, ...passthrough }) => (
   <div {...passthrough}>
