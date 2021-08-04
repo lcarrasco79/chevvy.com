@@ -4,12 +4,12 @@ const VariantSelector = ({ variantGroups, onSelectOption, selectedOptions, ...pa
   <div {...passthrough}>
     {variantGroups.map(group => (
       <div key={group.id} className="align-items-center">
-      Add Protection Offered By <span className="mr-3 font-weight-semibold">Future State Insurance</span>?
+      <span className="pt-3 pb-3">Add Protection Offered By <span className="mr-3 font-weight-semibold">Future State Insurance</span>?</span>
       {group.options.map(option => (
         <button
           key={option.id}
           onClick={() => onSelectOption(group.id, option.id)}
-          className={`mr-3 ${
+          className={`mr-3 font-color-white ${
             selectedOptions[group.id] && selectedOptions[group.id] === option.id
               ? 'variant-btn-selected'
               : 'variant-btn'
