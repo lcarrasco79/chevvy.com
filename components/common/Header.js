@@ -36,6 +36,24 @@ const mobileMenuLinks = [
     link: '/about'
   }
 ];
+const mobileMenuLinks_ = [
+  {
+    name: 'Home',
+    link: '/'
+  },
+  {
+    name: 'My account',
+    link: '/account'
+  },
+  {
+    name: 'Shop',
+    link: '/collection'
+  },
+  {
+    name: 'About',
+    link: '/about'
+  }
+];
 
 class Header extends Component {
   constructor(props) {
@@ -145,11 +163,6 @@ class Header extends Component {
               Hi, { customer.firstname }!
             </span>
           ) }
-          <Link href="/account">
-            <a className="font-color-black mx-2">
-              My account
-            </a>
-          </Link>
           <button
             className="bg-transparent mr-2 font-color-black font-weight-semibold"
             type="button"
@@ -170,6 +183,17 @@ class Header extends Component {
     );
   }
 
+  
+  renderMobileMenu() {
+    const { loggedIn } = this.state;
+
+    if (loggedIn) {
+      return mobileMenuLinks_
+    }
+
+    return mobileMenuLinks
+  }
+
   render() {
     const { showMobileMenu, showCart } = this.state;
     const { transparent, cart } = this.props;
@@ -184,7 +208,6 @@ class Header extends Component {
           }`}
         >
           <div className="d-none d-sm-flex">
-            { process.browser && this.renderLoginLogout() }
             <Link href="/collection">
               <a href="/collection" className="mr-4 font-color-black">Shop</a>
             </Link>
@@ -212,6 +235,7 @@ class Header extends Component {
             </Link>
           </div>
           <div className="d-flex">
+            { process.browser && this.renderLoginLogout() }
             <div
               className="position-relative cursor-pointer"
               onClick={this.toggleCart}
@@ -243,7 +267,7 @@ class Header extends Component {
                   top: '4em'
                 }}
               >
-                {mobileMenuLinks.map((item, i) => (
+                {renderMobileMenu().map((item, i) => (
                   <a
                     key={i}
                     href={item.link}
