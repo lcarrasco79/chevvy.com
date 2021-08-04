@@ -5,6 +5,7 @@ const VariantSelector = ({ variantGroups, onSelectOption, selectedOptions, ...pa
     {variantGroups.map(group => (
       <div key={group.id} className="align-items-center">
       <span className="pt-3 pb-3">Add Protection Offered By <span className="mr-3 font-weight-semibold">Future State Insurance</span>?</span>
+      <br/>
       {group.options.map(option => (
         <button
           key={option.id}
