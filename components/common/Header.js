@@ -267,7 +267,7 @@ class Header extends Component {
                   top: '4em'
                 }}
               >
-                {renderMobileMenu().map((item, i) => (
+                {this.renderMobileMenu().map((item, i) => (
                   <a
                     key={i}
                     href={item.link}
