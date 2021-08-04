@@ -36,18 +36,18 @@ class CheckoutPage extends Component {
 
       // string property names to conveniently identify inputs related to commerce.js validation errors
       // e.g error { param: "shipping[name]"}
-      'customer[first_name]': 'John',
+      'customer[first_name]': 'Charlie',
       'customer[last_name]': 'Doe',
-      'customer[email]': 'john@doe.com',
+      'customer[email]': 'charlie@doe.com',
       'customer[phone]': '',
       'customer[id]': null,
-      'shipping[name]': 'John Doe',
-      'shipping[street]': '318 Homer Street',
-      'shipping[street_2]': '',
-      'shipping[town_city]': 'Vancouver',
-      'shipping[region]': 'BC',
-      'shipping[postal_zip_code]': 'V6B 2V2',
-      'shipping[country]': 'CA',
+      'shipping[name]': 'Charlie Doe',
+      'shipping[street]': '1200 E Hillsdale Blvd',
+      'shipping[street_2]': 'Apt. 52B',
+      'shipping[town_city]': 'Foster City',
+      'shipping[region]': 'CA',
+      'shipping[postal_zip_code]': '94404',
+      'shipping[country]': 'US',
       'billing[name]': '',
       'billing[street]': '',
       'billing[street_2]': '',
@@ -64,7 +64,7 @@ class CheckoutPage extends Component {
       expMonth: '11',
       expYear: '22',
       cvc: '123',
-      billingPostalZipcode: 'V6B 2V2',
+      billingPostalZipcode: '94404',
 
       errors: {
         'fulfillment[shipping_method]': null,
