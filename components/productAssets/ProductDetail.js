@@ -140,7 +140,7 @@ class ProductDetail extends Component {
         {/* Product Variant */}
           <div>
             <VariantSelector
-              className="mb-3 align-items-center"
+              className="align-items-center"
               variantGroups={variantGroups}
               onSelectOption={this.handleSelectOption}
               selectedOptions={selectedOptions}
