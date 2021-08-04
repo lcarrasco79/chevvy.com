@@ -60,11 +60,11 @@ class ProductDetail extends Component {
   /**
    * On selecting variant
    */
-  handleSelectOption(variantGroupId, optionId) {
+  handleSelectOption(e) {
     this.setState({
       selectedOptions: {
         ...this.state.selectedOptions,
-        [variantGroupId]: optionId,
+        [e.target.name]: e.target.value,
       },
     });
   }
@@ -136,7 +136,7 @@ class ProductDetail extends Component {
           {name}
         </p>
         <div className="mb-4 pb-3 font-size-subheader">{(description || '').replace(reg, '')}</div>
-
+        <div className="h-1 border-bottom border-color-black" />
         {/* Product Variant */}
           <div className="d-none d-sm-block">
             <VariantSelector
