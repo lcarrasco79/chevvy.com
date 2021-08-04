@@ -107,7 +107,7 @@ export default function Product() {
           </div>
           <Collapse isOpened={showShipping}>
             <div className="pb-4 font-color-medium">
-              Arrives in 5 to 7 days, returns accepted within 30
+              Arrives in 1 to 6 days, returns accepted within 30
               days. For more information, click here.
             </div>
           </Collapse>
@@ -134,8 +134,8 @@ export default function Product() {
 
     <ClientReview />
     <SuggestedProducts />
-    <ExploreBanner />
-    <SocialMedia />
+    {/* <ExploreBanner />
+    <SocialMedia /> */}
     <Footer />
   </Root>
   );
