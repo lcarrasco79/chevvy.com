@@ -17,10 +17,10 @@ const Home = () => (
 
     <HeroSection />
     <HomeBanner />
-    <CategoryBanner />
+    {/* <CategoryBanner /> */}
     <ProductsBanner />
-    <ExploreBanner />
-    <SocialMedia />
+    {/* <ExploreBanner />
+    <SocialMedia /> */}
     <Footer />
   </Root>
 );
