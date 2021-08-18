@@ -487,6 +487,22 @@ class CheckoutPage extends Component {
     this.props.dispatchCaptureOrder(this.props.checkout.id, newOrder)
       .then(this.handleCaptureSuccess)
       .catch(this.handleCaptureError);
+
+    // Call PolicyCenter API to Quote and Bind
+    (this.props.checkout.live ? this.props.checkout.live.line_items : []).forEach((item) => {
+      console.log(item.product_name);
+      commerce.products.retrieve(item.product_id)
+      .then(product => {
+        console.log(product.price.formatted);
+        item.selected_options.forEach((option) => {
+          if (option.group_name === 'Protection Plan' && option.option_name !== 'No') {
+            console.log(option.option_name.split(' ')[0]);
+            console.log('Call PolicyCenter API to Quote and Bind: '+process.env.ISSUE_POLICY_API);
+          }
+        });
+      })
+      .catch(error => console.log(error));
+    });
   }
 
   /**
