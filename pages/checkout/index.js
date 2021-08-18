@@ -496,8 +496,26 @@ class CheckoutPage extends Component {
         console.log(product.price.formatted);
         item.selected_options.forEach((option) => {
           if (option.group_name === 'Protection Plan' && option.option_name !== 'No') {
-            console.log(option.option_name.split(' ')[0]);
-            console.log('Call PolicyCenter API to Quote and Bind: '+process.env.ISSUE_POLICY_API);
+            const year = option.option_name.split(' ')[0];
+            console.log(year);
+            //console.log('Call PolicyCenter API to Quote and Bind: '+process.env.NEXT_PUBLIC_CHEC_PUBLIC_KEY1);
+            const data = {
+              productName : item.product_name,
+              purchasePrice : product.price.raw,
+              protectionYears : parseInt(year)
+          };
+
+fetch('https://connections21-linux-pgan-uswest2.gwdemo.com/pc/rest/dpp/v1/policies', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Basic ' + btoa('su:gw'),
+    'Content-Type': 'application/json'
+  },
+  mode: 'no-cors',
+  body: JSON.stringify(data)
+}).then(res => {
+  console.log('Request complete! response:', res);
+});
           }
         });
       })
