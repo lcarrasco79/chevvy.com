@@ -21,6 +21,7 @@ import {
 import { connect } from 'react-redux';
 import { withRouter } from 'next/router';
 import { CardElement, Elements, ElementsConsumer } from '@stripe/react-stripe-js';
+import axios from 'axios'; 
 
 const billingOptions = ['Same as shipping Address', 'Use a different billing address'];
 
@@ -504,18 +505,32 @@ class CheckoutPage extends Component {
               purchasePrice : product.price.raw,
               protectionYears : parseInt(year)
           };
-
-fetch('https://connections21-linux-pgan-uswest2.gwdemo.com/pc/rest/dpp/v1/policies', {
-  method: 'POST',
-  headers: {
-    'Authorization': 'Basic ' + btoa('su:gw'),
-    'Content-Type': 'application/json'
-  },
-  mode: 'no-cors',
-  body: JSON.stringify(data)
-}).then(res => {
-  console.log('Request complete! response:', res);
-});
+          axios.post('https://connections21-linux-pgan-uswest2.gwdemo.com/pc/rest/dpp/v1/policies', data, {
+            mode: 'no-cors',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, OPTIONS',
+        'Content-Type': 'application/json',
+      },
+      auth: {
+        username: 'su',
+        password: 'gw'
+      }
+          }).then(res => {
+            console.log(res);
+            console.log(res.data);
+          })
+// fetch('https://connections21-linux-pgan-uswest2.gwdemo.com/pc/rest/dpp/v1/policies', {
+//   method: 'POST',
+//   headers: {
+//     'Authorization': 'Basic ' + btoa('su:gw'),
+//     'Content-Type': 'application/json'
+//   },
+//   mode: 'no-cors',
+//   body: JSON.stringify(data)
+// }).then(res => {
+//   console.log('Request complete! response:', res);
+// }).catch(error => console.log(error));
           }
         });
       })

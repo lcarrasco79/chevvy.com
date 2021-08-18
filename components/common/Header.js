@@ -225,13 +225,11 @@ class Header extends Component {
               alt="Menu icon"
             />
             <Link href="/">
-              <a>
                 <img
-                  src="/images/chevvy.com.svg"
+                  src="/images/chevvy-logo.svg"
                   className="logo cursor-pointer"
                   alt="Logo"
                 />
-              </a>
             </Link>
           </div>
           <div className="d-flex">
