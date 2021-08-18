@@ -37,8 +37,12 @@ header {
   }
 
   .logo {
-    width: auto;
-    height: 8rem;
+    width: 70%;
+    height: auto;
+  }
+
+  .logo2 {
+    max-width: 3rem;
   }
 
   .cart-count {

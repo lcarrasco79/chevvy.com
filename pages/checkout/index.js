@@ -507,15 +507,15 @@ class CheckoutPage extends Component {
           };
           axios.post('https://connections21-linux-pgan-uswest2.gwdemo.com/pc/rest/dpp/v1/policies', data, {
             mode: 'no-cors',
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, OPTIONS',
-        'Content-Type': 'application/json',
-      },
-      auth: {
-        username: 'su',
-        password: 'gw'
-      }
+            headers: {
+              'Access-Control-Allow-Origin': '*',
+              'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, OPTIONS',
+              'Content-Type': 'application/json',
+            },
+            auth: {
+              username: 'su',
+              password: 'gw'
+            }
           }).then(res => {
             console.log(res);
             console.log(res.data);

@@ -207,7 +207,12 @@ class Header extends Component {
             transparent ? '' : 'invert'
           }`}
         >
-          <div className="d-none d-sm-flex">
+          <div className="d-none d-sm-flex align-items-center">
+            <img
+                  src="/images/chevvy-avatar.svg"
+                  className="logo2"
+                  alt="Logo"
+                />
             <Link href="/collection">
               <a href="/collection" className="mr-4 font-color-black">Shop</a>
             </Link>
