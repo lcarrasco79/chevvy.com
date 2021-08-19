@@ -506,10 +506,10 @@ class CheckoutPage extends Component {
               protectionYears : parseInt(year)
           };
           axios.post('https://connections21-linux-pgan-uswest2.gwdemo.com/pc/rest/dpp/v1/policies', data, {
-            mode: 'no-cors',
+            mode: 'cors',
             headers: {
               'Access-Control-Allow-Origin': '*',
-              'Access-Control-Allow-Methods': 'GET, PUT, POST, DELETE, OPTIONS',
+              'Access-Control-Allow-Methods': '*',
               'Content-Type': 'application/json',
             },
             auth: {
@@ -804,7 +804,7 @@ class CheckoutPage extends Component {
                             <p className="font-color-light">Quantity: {item.quantity}</p>
                             <div className="d-flex justify-content-between mb-2">
                               {item.selected_options.map((option) =>
-                                <p key={option.group_id} className="font-color-light font-weight-small">
+                                <p key={option.group_id} className="font-color-black font-weight-semibold">
                                   {option.group_name}: {option.option_name}
                                 </p>
                               )}

@@ -43,7 +43,7 @@ class CartItem extends Component {
             </div>
             <div className="d-flex justify-content-between mb-2">
               {item.selected_options.map((option, i) =>
-                <p key={i} className="font-color-light font-weight-small">
+                <p key={i} className="font-color-black font-weight-semibold">
                   {option.group_name}: {option.option_name}
                 </p>
               )}
