@@ -14,7 +14,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <link rel="icon" href="/favicon.png" />
+          <link rel="icon" href="/images/chevvy-avatar.svg" type="image/svg+xml" />
           <link
             rel="stylesheet"
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
