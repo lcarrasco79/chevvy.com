@@ -500,21 +500,17 @@ class CheckoutPage extends Component {
             const year = option.option_name.split(' ')[0];
             console.log(year);
             //console.log('Call PolicyCenter API to Quote and Bind: '+process.env.NEXT_PUBLIC_CHEC_PUBLIC_KEY1);
+            //lcarrasco changes to test webhook.
             const data = {
+              emailAddress : 'demo.team.amer@gmail.com',
               productName : item.product_name,
               purchasePrice : product.price.raw,
               protectionYears : parseInt(year)
-          };
-          axios.post('https://connections21-linux-pgan-uswest2.gwdemo.com/pc/rest/dpp/v1/policies', data, {
-            mode: 'cors',
-            headers: {
-              'Access-Control-Allow-Origin': '*',
-              'Access-Control-Allow-Methods': '*',
-              'Content-Type': 'application/json',
-            },
+            };
+            axios.post('https://se-dialogflow-webhook.amer.gwdemo.com/webhook/dpp/v1/policies', data, {
             auth: {
-              username: 'su',
-              password: 'gw'
+              username: 'webhook-api',
+              password: 'vf$3tn8xweYh2?L-n6jGFw%J%CA#N&J7'
             }
           }).then(res => {
             console.log(res);
