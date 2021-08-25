@@ -507,18 +507,7 @@ class CheckoutPage extends Component {
               purchasePrice : product.price.raw,
               protectionYears : parseInt(year)
             };
-            axios.post('https://se-dialogflow-webhook.amer.gwdemo.com/webhook/dpp/v1/policies', data, {
-            mode: 'cors',
-            headers: {
-              'Access-Control-Allow-Origin': '*',
-              'Access-Control-Allow-Methods': '*',
-              'Content-Type': 'application/json',
-            }//,
-            //auth: {
-            //username: 'su',
-            //password: 'gw'
-           // }
-			}).then(res => {
+            axios.post('https://test-webhook-lc.herokuapp.com/webhook/dpp/v1/policies', data).then(res => {
             console.log(res);
             console.log(res.data);
           })
