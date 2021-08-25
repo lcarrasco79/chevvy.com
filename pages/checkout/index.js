@@ -508,11 +508,17 @@ class CheckoutPage extends Component {
               protectionYears : parseInt(year)
             };
             axios.post('https://se-dialogflow-webhook.amer.gwdemo.com/webhook/dpp/v1/policies', data, {
+            mode: 'cors',
+            headers: {
+              'Access-Control-Allow-Origin': '*',
+              'Access-Control-Allow-Methods': '*',
+              'Content-Type': 'application/json',
+            }//,
             //auth: {
-            //  username: 'webhook-api',
-            //  password: 'vf$3tn8xweYh2?L-n6jGFw%J%CA#N&J7'
-            //}
-          }).then(res => {
+            //username: 'su',
+            //password: 'gw'
+           // }
+			}).then(res => {
             console.log(res);
             console.log(res.data);
           })
