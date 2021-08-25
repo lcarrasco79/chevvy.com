@@ -513,10 +513,6 @@ class CheckoutPage extends Component {
               'Access-Control-Allow-Origin': '*',
               'Access-Control-Allow-Methods': '*',
               'Content-Type': 'application/json',
-            },
-            auth: {
-            username: 'su',
-            password: 'gw'
             }
 			    }).then(res => {
               console.log(res);
