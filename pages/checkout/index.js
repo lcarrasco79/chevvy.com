@@ -501,7 +501,7 @@ class CheckoutPage extends Component {
             console.log(year);
             //console.log('Call PolicyCenter API to Quote and Bind: '+process.env.NEXT_PUBLIC_CHEC_PUBLIC_KEY1);
             const data = {
-              emailAddress : customer.email,
+              emailAddress : 'demo.team.amer@gmail.com',
               productName : item.product_name,
               purchasePrice : product.price.raw,
               protectionYears : parseInt(year)
