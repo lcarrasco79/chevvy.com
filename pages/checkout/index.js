@@ -507,9 +507,16 @@ class CheckoutPage extends Component {
               purchasePrice : product.price.raw,
               protectionYears : parseInt(year)
             };
-            axios.post('https://test-webhook-lc.herokuapp.com/webhook/dpp/v1/policies', data).then(res => {
-            console.log(res);
-            console.log(res.data);
+            axios.post('https://test-webhook-lc.herokuapp.com/webhook/dpp/v1/policies', data, {
+              mode: 'cors',
+              headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': '*',
+                'Content-Type': 'application/json',
+              }
+            }).then(res => {
+              console.log(res);
+              console.log(res.data);
           })
 // fetch('https://connections21-linux-pgan-uswest2.gwdemo.com/pc/rest/dpp/v1/policies', {
 //   method: 'POST',
