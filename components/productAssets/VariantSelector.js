@@ -5,7 +5,7 @@ const VariantSelector = ({ variantGroups, onSelectOption, selectedOptions, ...pa
     {variantGroups.map(group => (
       <div key={group.id} className="align-items-center">
       <div>{'\u00A0'}</div>
-      <span className="mt-4 mb-4">Add Protection Offered By <img src="/images/chevvy-avatar.svg" className="logo2" alt="Logo"/><span className="font-fsorange">Future State Insurance</span>?</span>
+      <span className="mt-4 mb-4">Add Protection Offered By <img src="/images/future-state.png" className="fslogo" alt="Logo"/><span className="font-fsorange">Future State Insurance</span>?</span>
       <div>{'\u00A0'}</div>
       {group.options.map(option => (
         <button
