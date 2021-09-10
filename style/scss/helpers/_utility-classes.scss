@@ -509,6 +509,7 @@
   color: $warning-800 !important;
 }
 
+
 //---------------------------
 // Outlines
 //----------------------------
@@ -1322,4 +1323,13 @@
 .mt-6,
 .my-6 {
   margin-top: 2rem;
+}
+
+//----------------------
+// Future State Branding
+//---------------------
+
+.font-fsorange {
+  font-weight: $bold-weight !important;
+  color: $fsbrand-900 !important;
 }
