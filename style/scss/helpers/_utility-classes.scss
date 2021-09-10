@@ -1329,7 +1329,9 @@
 // Future State Branding
 //---------------------
 
-.font-fsorange {
+.font-fsbrand {
   font-weight: $bold-weight !important;
-  color: $fsbrand-900 !important;
+  font-size: large !important;
+  font-style: italic !important;
+  color: $black-900 !important;
 }
